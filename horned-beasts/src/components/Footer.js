@@ -4,12 +4,7 @@ let footStyle = {
   color: "gray",
 };
 export default class Footer extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-
+  
   render() {
     return (
       <footer style={footStyle}>

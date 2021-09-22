@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+let styles = {color:'white',
+float:'right'}
 export default class HornedBeasts extends Component {
     constructor(props) {
         super(props)
@@ -24,7 +25,7 @@ export default class HornedBeasts extends Component {
                 </img>
                 <figcaption>
                     {this.props.description}
-                   <p>Likes: {this.state.likes}</p>
+                   <p style = {styles}>Likes: {this.state.likes} | &hearts; </p>
                 </figcaption>
                 </figure>
             </div>
