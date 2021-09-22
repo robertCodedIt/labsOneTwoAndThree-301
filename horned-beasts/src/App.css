@@ -1,12 +1,76 @@
+
+@keyframes bgGradient {
+  5% {
+    background: #000;
+  }
+  10% {
+    background: #171716;
+  }
+  15% {
+    background: #2e2e2c;
+  }
+  20% {
+    background: #454442;
+  }
+  25% {
+    background: #5c5b58;
+  }
+  30% {
+    background: #73726e;
+  }
+  35% {
+    background: #898983;
+  }
+  40% {
+    background: #a0a099;
+  }
+  45% {
+    background: #b7b6af;
+  }
+  50% {
+    background: #b7b6af;
+  }
+  55% {
+    background: #a0a099;
+  }
+  60% {
+    background: #898983;
+  }
+  65% {
+    background: #73726e;
+  }
+  70% {
+    background: #5c5b58;
+  }
+  75% {
+    background: #454442;
+  }
+  80% {
+    background: #2e2e2c;
+  }
+  85% {
+    background: #171716;
+  }
+  90% {
+    background: #000;
+  }
+}
 body{
   display:grid;
   place-items:center;
+  animation: bgGradient infinite 60s ;
 }
 
 img{
   width:300px;
   height:300px;
+  
 }
 #beasts{
-  border:5px solid black;
+  border:5px solid orange;
+}
+figure{
+  font-size: 1.5rem;
+  color:blue;
+  
 }
