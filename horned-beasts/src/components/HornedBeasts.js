@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-let styles = {color:'white',
+let styles = {color:'pink',
 float:'right'}
 export default class HornedBeasts extends Component {
     constructor(props) {
         super(props)
         
         this.state = {
-        likes:0,  
+        likes:0,
+          
         }
         this.handleClick = this.handleClick.bind(this);
     }
@@ -21,11 +22,11 @@ export default class HornedBeasts extends Component {
         return (
             <div id = 'beasts'>
                 <figure>
-                <img onDoubleClick = {this.handleClick} src = {this.props.imageUrl} alt = {this.props.title}>
+                <img onDoubleClick = {this.handleClick} src = {this.props.image_url} alt = {this.props.title}>
                 </img>
                 <figcaption>
                     {this.props.description}
-                   <p style = {styles}>Likes: {this.state.likes} | &hearts; </p>
+                   <p style = {styles}> &hearts; {this.state.likes} </p>
                 </figcaption>
                 </figure>
             </div>
