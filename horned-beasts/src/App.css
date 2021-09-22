@@ -1,0 +1,12 @@
+body{
+  display:grid;
+  place-items:center;
+}
+
+img{
+  width:300px;
+  height:300px;
+}
+#beasts{
+  border:5px solid black;
+}
