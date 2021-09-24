@@ -1,35 +1,72 @@
 import React, { Component } from "react";
-let styles = {color:'pink',
-float:'right'}
+import { Modal,Button } from "react-bootstrap";
+
+import Card from "react-bootstrap/Card";
+let modalImgStyle = {
+    width:'300px',
+    height:'400px'
+}
+
 export default class HornedBeasts extends Component {
-    constructor(props) {
-        super(props)
-        
-        this.state = {
-        likes:0,
-          
-        }
-        this.handleClick = this.handleClick.bind(this);
-    }
-    handleClick = () => {
-        this.setState(prevState => {
-           return {likes: prevState.likes + 1}
-        })
-    }
-      
-    render() {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      likes: 0,
+      isOpen : false,
+    };
+    this.handleClick = this.handleClick.bind(this);
+
+  }
+  handleClick = () => {
+    this.setState((prevState) => {
+      return { likes: prevState.likes + 1 ,
+    isOpen:true};
+    });
     
-        return (
-            <div id = 'beasts'>
-                <figure>
-                <img onDoubleClick = {this.handleClick} src = {this.props.image_url} alt = {this.props.title}>
-                </img>
-                <figcaption>
-                    {this.props.description}
-                   <p style = {styles}> &hearts; {this.state.likes} </p>
-                </figcaption>
-                </figure>
-            </div>
-        )
-    }
+  };
+//   openModal = () => this.setState({ isOpen: true });
+  closeModal = () => this.setState({ isOpen: false });
+
+
+  render() {
+    return (
+      <div id="beasts">
+
+
+
+
+
+
+          
+
+    <Card style={{ width: "18rem" }}>
+          <Card.Img
+            variant="top"
+            onDoubleClick={this.handleClick}
+            src={this.props.image_url}
+          />
+          <Card.Body>
+            <Card.Title> {this.props.title}</Card.Title>
+            <Card.Text>
+              {this.props.description}
+              &hearts; {this.state.likes}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+       
+        <Modal show={this.state.isOpen} onHide={this.closeModal}>
+  <Modal.Header closeButton>
+    <Modal.Title>{this.props.title}</Modal.Title>
+  </Modal.Header>
+  <Modal.Body> <img style = {modalImgStyle} src = {this.props.image_url} alt = {this.props.id}/></Modal.Body>
+  <Modal.Footer>
+    <Button variant="secondary" onClick = {this.closeModal}>Close</Button>
+  </Modal.Footer>
+</Modal>
+ 
+
+      </div>
+    );
+  }
 }
