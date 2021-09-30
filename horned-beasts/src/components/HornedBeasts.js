@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Modal,Button } from "react-bootstrap";
-
 import Card from "react-bootstrap/Card";
 let modalImgStyle = {
     width:'300px',
@@ -23,6 +22,8 @@ export default class HornedBeasts extends Component {
       return { likes: prevState.likes + 1 ,
     isOpen:true};
     });
+
+
     
   };
 
