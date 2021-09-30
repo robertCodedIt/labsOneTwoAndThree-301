@@ -25,22 +25,14 @@ export default class HornedBeasts extends Component {
     });
     
   };
-//   openModal = () => this.setState({ isOpen: true });
+
   closeModal = () => this.setState({ isOpen: false });
 
 
   render() {
     return (
       <div id="beasts">
-
-
-
-
-
-
-          
-
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "25rem" }}>
           <Card.Img
             variant="top"
             onDoubleClick={this.handleClick}
@@ -59,8 +51,11 @@ export default class HornedBeasts extends Component {
   <Modal.Header closeButton>
     <Modal.Title>{this.props.title}</Modal.Title>
   </Modal.Header>
-  <Modal.Body> <img style = {modalImgStyle} src = {this.props.image_url} alt = {this.props.id}/></Modal.Body>
+  <Modal.Body> <img onClick ={this.closeModal} style = {modalImgStyle} src = {this.props.image_url} alt = {this.props.id}/>
+  &hearts;{this.state.likes}
+  </Modal.Body>
   <Modal.Footer>
+      {this.props.description}
     <Button variant="secondary" onClick = {this.closeModal}>Close</Button>
   </Modal.Footer>
 </Modal>

@@ -1,7 +1,7 @@
 import HornedBeasts from "./HornedBeasts";
 import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col'
- import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col';
+ import Row from 'react-bootstrap/Row';
 import { data } from "./data";
 
 
